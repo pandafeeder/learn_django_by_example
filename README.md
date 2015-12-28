@@ -10,7 +10,7 @@ Django has three fundamental parts plus 1 usefull util Form, Form is kindof fami
 ## Model Layer(django.db)
 
 ### basic use sample:
-```
+```python
 from django.db.models import Model
 
 class Individual(models.Model): 
@@ -59,7 +59,12 @@ Query involves three basic parts. When you have a database, how can you:
 
 3. Retrieving data objects from database.
      
-    By constructing a QuerySet using a Manager() defined in a model. QuerySet provides all(), filter(), get(), exclude() methods to query data objects from database.[[3]]
+    By constructing a [QuerySet][queryset] using a Manager() defined in a model. QuerySet provides all(), filter(), get(), exclude() methods to query data objects from database.[[3]]. QuerySet supports chaining filters, lazy evaluation, Python's array-slicing syntax. Keyword arguments of filter(), get(), exclude() are called "Filed Lookups". They have the form like: 
+
+    **field(attribute_of_model_object)__lookuptype(provided_by_Django_built-in_Lookup_class)=value**. 
+
+    **field** is an attribute of a model object, **__** has two underscores, **lookuptype** is provided by Django's built-in django.db.modles.Lookup class. 
+ 
 
 
 
@@ -84,3 +89,4 @@ Query involves three basic parts. When you have a database, how can you:
 [1]:https://docs.djangoproject.com/en/1.9/topics/db/queries/#creating-objects
 [2]:https://docs.djangoproject.com/en/1.9/topics/db/queries/#saving-changes-to-objects
 [3]:https://docs.djangoproject.com/en/1.9/topics/db/queries/#retrieving-objects
+[queryset]:https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.query.QuerySet
