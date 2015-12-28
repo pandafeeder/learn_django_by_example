@@ -48,6 +48,7 @@ When model code is done. You can use [Django provided command][migrate] to deplo
 
 Making query is now what we are facing.
 Query involves three basic parts. When you have a database, how can you:
+
 1. create data objects
 2. save data objects to database
 3. retrieve data objects from database.
