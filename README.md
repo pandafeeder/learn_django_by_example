@@ -61,10 +61,10 @@ Query involves three basic parts. When you have a database, how can you:
      
     By constructing a [QuerySet][queryset] using a Manager() defined in a model. QuerySet provides all(), filter(), get(), exclude() methods to query data objects from database.[[3]]. QuerySet supports chaining filters, lazy evaluation, Python's array-slicing syntax. Keyword arguments of filter(), get(), exclude() are called "Filed Lookups". They have the form like: 
 
-    **field(attribute_of_model_object)__lookuptype(provided_by_Django_built-in_Lookup_class)=value**. 
+    ***field__lookuptype=value***. 
 
-    **field** is an attribute of a model object, **__** has two underscores, **lookuptype** is provided by Django's built-in django.db.modles.Lookup class. 
- 
+    ***field*** is an attribute of a model object, **__** has two underscores, ***lookuptype*** is provided by Django's built-in django.db.modles.Lookup class. 
+
 
 
 
