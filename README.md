@@ -13,7 +13,7 @@ Django has three fundamental parts plus 1 usefull util Form, Form is kindof fami
 ```
 from django.db.models import Model
 
-class Individual(TimeStampedModel): 
+class Individual(modes.Model): 
     GENDER = (                 
         ('M', 'male'),
         ('F', 'female'),
@@ -30,5 +30,7 @@ class Individual(TimeStampedModel):
 
     class Meta:
         ordering = ('age',)
+        
+class Company(models.Model): pass
 ```
 this auto-incrementing key is auto added by django #you can make your own field(primary_key=True), only one pk=True field for a whole Model. #Think ModelField as a of, is an instance of coresponding Field class. #You can define as much fields as you want for your Model. #There's a special catagory "relationship field" #this is auto added by django, Manager provides interfaces for makeing queries #at least one Manager is provided for every model. You can change objects to other names #your like with querying with the name your specified. MyModel.objects.all() => MyModel.yourname.all() #Also you can customize your own Manager(). You can define many custom Manager in one Model.
