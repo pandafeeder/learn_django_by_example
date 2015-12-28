@@ -38,7 +38,7 @@ class Company(models.Model):
     pass
 ```
 1. This auto-incrementing key is auto added by Django,you can make your own field(primary_key=True), only one pk=True field for a whole Model. 
-2. Filed coresponds to COLUMN of a TABLE in database. [There're plenty filed types in Django.][field] There's a special catagory field. [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
+2. Filed coresponds to COLUMN of a TABLE in database. [There're plenty filed types in Django][field]. And there're many [options for each kind of Field][fieldop]. Among those, [vilidators][https://docs.djangoproject.com/en/1.9/ref/validators/] is a good way to vilidate our input data.There's a special catagory field: relationship Field. [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
 3. This is auto added by Django, [Manager][manager] provides interfaces for makeing queries, at least one Manager is provided for every unabstract model. You can change objects to other names your like with querying with the name your specified. MyModel.objects.all() => MyModel.yourname.all().Also you can customize your own Manager(). You can define many custom Manager in one Model.
 4. [Meta option.][meta]. abstract=True makes a model Abstract Model act as a parent class which can be herited. There're many Meta options in Django.
 
@@ -49,14 +49,23 @@ When model code is done. You can use [Django provided command][migrate] to deplo
 Making query is now what we are facing.
 Query involves three basic parts. When you have a database, how can you:
 
-1. create data objects
-2. save data objects to database
+1. create data objects save them to database
+
+Creating objects is simple, just like any python object's instantiation, and calling save() method to save it to database. You can also use Manager's API ->create to create and save an object in one time.
+
+2. save changes to objects 
+Saving changes to objects is just like updating an attribute of any python object, then save() method will update it to database. You should pay some extra attension to creating or updateing relationship fields: [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
+
 3. retrieve data objects from database.
 
 
 
 
+
+
+
 [field]:https://docs.djangoproject.com/en/1.9/ref/models/fields/#model-field-types
+[fieldop]:https://docs.djangoproject.com/en/1.9/ref/models/fields/#field-options
 [mto]:https://docs.djangoproject.com/en/1.9/topics/db/examples/many_to_one/
 [mtm]:https://docs.djangoproject.com/en/1.9/topics/db/examples/many_to_many/
 [oto]:https://docs.djangoproject.com/en/1.9/topics/db/examples/one_to_one/
