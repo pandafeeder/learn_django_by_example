@@ -40,7 +40,7 @@ class Company(models.Model):
 1. This auto-incrementing key is auto added by django,you can make your own field(primary_key=True), only one pk=True field for a whole Model. 
 2. Filed coresponds to COLUMN of a TABLE in database. [There're plenty filed types in django.][field] There's a special catagory field. [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
 3. This is auto added by django, [Manager][manager] provides interfaces for makeing queries, at least one Manager is provided for every unabstract model. You can change objects to other names your like with querying with the name your specified. MyModel.objects.all() => MyModel.yourname.all().Also you can customize your own Manager(). You can define many custom Manager in one Model.
-4. [Meta option.][meta]. 
+4. [Meta option.][meta]. abstract=True makes a model Abstract Model act as a parent class which can be herited. There're many Meta options in django.
 
 
 
