@@ -1,4 +1,4 @@
-# learn_django_by_example
+# learn_Django_by_example
 
 Django has three fundamental parts plus 1 usefull util Form, Form is kindof familar to Model, worth being taken as the fourth fundamental part, so:
 
@@ -9,7 +9,7 @@ Django has three fundamental parts plus 1 usefull util Form, Form is kindof fami
 
 ## Model Layer(django.db)
 
-### basic usecase:
+### basic use sample:
 ```
 from django.db.models import Model
 
@@ -37,15 +37,20 @@ class Individual(models.Model):
 class Company(models.Model): 
     pass
 ```
-1. This auto-incrementing key is auto added by django,you can make your own field(primary_key=True), only one pk=True field for a whole Model. 
-2. Filed coresponds to COLUMN of a TABLE in database. [There're plenty filed types in django.][field] There's a special catagory field. [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
-3. This is auto added by django, [Manager][manager] provides interfaces for makeing queries, at least one Manager is provided for every unabstract model. You can change objects to other names your like with querying with the name your specified. MyModel.objects.all() => MyModel.yourname.all().Also you can customize your own Manager(). You can define many custom Manager in one Model.
-4. [Meta option.][meta]. abstract=True makes a model Abstract Model act as a parent class which can be herited. There're many Meta options in django.
+1. This auto-incrementing key is auto added by Django,you can make your own field(primary_key=True), only one pk=True field for a whole Model. 
+2. Filed coresponds to COLUMN of a TABLE in database. [There're plenty filed types in Django.][field] There's a special catagory field. [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
+3. This is auto added by Django, [Manager][manager] provides interfaces for makeing queries, at least one Manager is provided for every unabstract model. You can change objects to other names your like with querying with the name your specified. MyModel.objects.all() => MyModel.yourname.all().Also you can customize your own Manager(). You can define many custom Manager in one Model.
+4. [Meta option.][meta]. abstract=True makes a model Abstract Model act as a parent class which can be herited. There're many Meta options in Django.
 
 
+### query
+When model code is done. You can use [Django provided command][migrate] to deploy your database.
 
-
-
+Making query is now what we are facing.
+Query involves three basic parts. When you have a database, how can you:
+1. create data objects
+2. save data objects to database
+3. retrieve data objects from database.
 
 
 
@@ -56,3 +61,4 @@ class Company(models.Model):
 [oto]:https://docs.djangoproject.com/en/1.9/topics/db/examples/one_to_one/
 [manager]:https://docs.djangoproject.com/en/1.9/topics/db/managers/
 [meta]:https://docs.djangoproject.com/en/1.9/ref/models/options/
+[migrate]:https://docs.djangoproject.com/en/1.9/topics/migrations/
