@@ -51,15 +51,15 @@ Query involves three basic parts. When you have a database, how can you:
 
 1. Creating data objects and saving them to database
 
-    Creating objects is simple, just like any python object's instantiation, and calling save() method to save it to database. You can also use Manager's API ->create to create and save an object in one time.[1]
+    Creating objects is simple, just like any python object's instantiation, and calling save() method to save it to database. You can also use Manager's API ->create to create and save an object in one time.[[1]]
 
 2. Saving changes to objects 
 
-    Saving changes to objects is just like updating an attribute of any python object, then save() method will update it to database.[2] You should pay attension to creating or updateing relationship fields: [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
+    Saving changes to objects is just like updating an attribute of any python object, then save() method will update it to database.[[2]] You should pay attension to creating or updateing relationship fields: [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
 
 3. Retrieving data objects from database.
      
-    By constructing a QuerySet using a Manager() defined in a model. QuerySet provides all(), filter(), get(), exclude() methods to query data objects from database.[3]
+    By constructing a QuerySet using a Manager() defined in a model. QuerySet provides all(), filter(), get(), exclude() methods to query data objects from database.[[3]]
 
 
 
