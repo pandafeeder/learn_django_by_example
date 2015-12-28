@@ -37,10 +37,10 @@ class Individual(models.Model):
 class Company(models.Model): 
     pass
 ```
-#1. This auto-incrementing key is auto added by django,you can make your own field(primary_key=True), only one pk=True field for a whole Model. 
-#2. Filed coresponds to COLUMN of a TABLE in database. [They're plenty filed types in django.][field] There's a special catagory field. [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
-#3. This is auto added by django, [Manager][manager] provides interfaces for makeing queries, at least one Manager is provided for every unabstract model. You can change objects to other names your like with querying with the name your specified. MyModel.objects.all() => MyModel.yourname.all().Also you can customize your own Manager(). You can define many custom Manager in one Model.
-#4. 
+1. This auto-incrementing key is auto added by django,you can make your own field(primary_key=True), only one pk=True field for a whole Model. 
+2. Filed coresponds to COLUMN of a TABLE in database. [They're plenty filed types in django.][field] There's a special catagory field. [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
+3. This is auto added by django, [Manager][manager] provides interfaces for makeing queries, at least one Manager is provided for every unabstract model. You can change objects to other names your like with querying with the name your specified. MyModel.objects.all() => MyModel.yourname.all().Also you can customize your own Manager(). You can define many custom Manager in one Model.
+4. 
 
 
 
@@ -50,8 +50,8 @@ class Company(models.Model):
 
 
 
-[field]https://docs.djangoproject.com/en/1.9/ref/models/fields/#model-field-types
-[mto]https://docs.djangoproject.com/en/1.9/topics/db/examples/many_to_one/
-[mtm]https://docs.djangoproject.com/en/1.9/topics/db/examples/many_to_many/
-[oto]https://docs.djangoproject.com/en/1.9/topics/db/examples/one_to_one/
-[manager]https://docs.djangoproject.com/en/1.9/topics/db/managers/
+[field]:https://docs.djangoproject.com/en/1.9/ref/models/fields/#model-field-types
+[mto]:https://docs.djangoproject.com/en/1.9/topics/db/examples/many_to_one/
+[mtm]:https://docs.djangoproject.com/en/1.9/topics/db/examples/many_to_many/
+[oto]:https://docs.djangoproject.com/en/1.9/topics/db/examples/one_to_one/
+[manager]:https://docs.djangoproject.com/en/1.9/topics/db/managers/
