@@ -1,6 +1,6 @@
 # learn_Django_by_example
 
-Django has three fundamental parts plus 1 usefull util Form, Form is kindof familar to Model, worth being taken as the fourth fundamental part, so:
+Django has three fundamental parts plus one usefull util Form, Form is kinda familar to Model, but worth being taken as the fourth fundamental part, so:
 
 1. Model Layer(django.db)
 2. View Layer(django.views)
@@ -64,6 +64,10 @@ Query involves three basic parts. When you have a database, how can you:
     ***field__lookuptype=value***. 
 
     ***field*** is an attribute of a model object, **__** has two underscores, ***lookuptype*** is provided by Django's built-in django.db.modles.Lookup class. 
+
+    For a Lookup to span a relationship, just use the filed name of the related fields across models, then two underscore, then the field name you want to query of the ralated model, you can even use lookup after this queried field, like:
+
+    ***Individual.objects.filter(company__name__iexact='Planet Express')***
 
 
 
