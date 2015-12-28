@@ -51,10 +51,11 @@ Query involves three basic parts. When you have a database, how can you:
 
 1. create data objects save them to database
 
-Creating objects is simple, just like any python object's instantiation, and calling save() method to save it to database. You can also use Manager's API ->create to create and save an object in one time.
+    Creating objects is simple, just like any python object's instantiation, and calling save() method to save it to database. You can also use Manager's API ->create to create and save an object in one time.
 
 2. save changes to objects 
-Saving changes to objects is just like updating an attribute of any python object, then save() method will update it to database. You should pay some extra attension to creating or updateing relationship fields: [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
+
+    Saving changes to objects is just like updating an attribute of any python object, then save() method will update it to database. You should pay some extra attension to creating or updateing relationship fields: [ForeignKey][mto], [ManyToManyField][mtm], [OneToOneField][oto]
 
 3. retrieve data objects from database.
 
