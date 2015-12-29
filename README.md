@@ -73,6 +73,10 @@ Query involves three basic parts. When you have a database, how can you:
 
     ***Individual.objects.filter(company_id=1)***
 
+    And for the related model of ForeignKey field, the object of the model has a relating_name_set, attribute, like:
+
+    ***express = Company.objects.get(pk=1); express.individual_set.all()*** will output all individual objects whose company is express. 
+
 
 
 
