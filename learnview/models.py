@@ -5,8 +5,8 @@ from django.utils.encoding import python_2_unicode_compatible
 
 
 class TimeStampModel(models.Model):
-	"""abstract=True makes this model be a parent models of models which inherited 
-	of this models. Thus every sub-models would has fields created and modified"""
+	"""abstract=True makes this model be a parent model of models which inherited 
+	this model. Thus every sub-models would has fields created and modified"""
 	created  = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 
@@ -38,5 +38,8 @@ class Individual(TimeStampModel):
 @python_2_unicode_compatible
 class Company(TimeStampModel):
 	"""model for companies in Futurama"""
-	name    = models.CharField(max_length=50)
-	
+
+
+@python_2_unicode_compatible
+class Species(TimeStampModel):
+	"""model for species in Futurama"""
