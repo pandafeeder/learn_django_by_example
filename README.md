@@ -65,9 +65,16 @@ Query involves three basic parts. When you have a database, how can you:
 
     ***field*** is an attribute of a model object, **__** has two underscores, ***lookuptype*** is provided by Django's built-in django.db.modles.Lookup class. 
 
-    For a Lookup to span a relationship, just use the filed name of the related fields across models, then two underscore, then the field name you want to query of the ralated model, you can even use lookup after this queried field, like:
+    For a Lookup to span a relationship, just use the filed name of the related fields across models, then two underscore, then the field name you want to query of the ralated model, you can even use lookup after queried field, like:
 
     ***Individual.objects.filter(company__name__iexact='Planet Express')***
+
+    There's a sepcial case for ForeignKey, you can use the ForeignKey Field name followed by ***_id=value*** to get the objects with Foreign Modle with ***pk=value***. Like:
+
+    ***Individual.objects.filter(company_id=1)***
+
+
+
 
 
 
