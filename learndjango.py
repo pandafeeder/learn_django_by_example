@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import sys
 
 from django.conf import settings
 from django.conf.urls import url
@@ -25,7 +24,6 @@ urlpatterns = (
 	#url(r'^learnview/',  include('learnview.urls',  namespace='learnview')),
 	#url(r'^learnform',   include('learnform.urls',  namespace='learnform')),
 )
-
 
 
 
