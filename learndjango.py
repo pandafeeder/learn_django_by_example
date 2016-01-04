@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 
 from django.conf import settings
 from django.conf.urls import url
@@ -14,15 +15,15 @@ settings.configure(
 	ROOT_URLCONF = __file__,
 	INSTALLED_APPS = (
 		'learnmodel',
-		'learnview',
-		'learnform',
+		#'learnview',
+		#'learnform',
 	),
 )
 
 urlpatterns = (
-	url(r'^learnmodel/', include('learnmodel.urls', namespace='learnmodel')),
-	url(r'^learnview/',  include('learnview.urls',  namespace='learnview')),
-	url(r'^learnform',   include('learnform.urls',  namespace='learnform')),
+	#url(r'^learnmodel/', include('learnmodel.urls', namespace='learnmodel')),
+	#url(r'^learnview/',  include('learnview.urls',  namespace='learnview')),
+	#url(r'^learnform',   include('learnform.urls',  namespace='learnform')),
 )
 
 
