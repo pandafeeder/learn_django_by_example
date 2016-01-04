@@ -38,8 +38,18 @@ class Individual(TimeStampModel):
 @python_2_unicode_compatible
 class Company(TimeStampModel):
 	"""model for companies in Futurama"""
+	name        = models.CharField(max_length=50)
+	descritpion = models.CharField(max_length=200)	
+
+	def __str__(self):
+		return self.name
 
 
 @python_2_unicode_compatible
 class Species(TimeStampModel):
 	"""model for species in Futurama"""
+	name = models.CharField(max_length=50)
+	characteristic = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.name
