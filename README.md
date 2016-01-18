@@ -77,7 +77,14 @@ Query involves three basic parts. When you have a database, how can you:
 
     ***express = Company.objects.get(pk=1); express.individual_set.all()*** will output all individual objects whose company is express. 
 
+###create objects
 
+1.ordinary objects with no relation file is easily created. Just like ordinary creatation of python objects.
+    instance = Class(args=xxxx)
+
+2.ForeignField
+
+3.ManyToManyField
 
 
 
