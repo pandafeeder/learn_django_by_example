@@ -140,7 +140,7 @@ Query involves three basic parts. When you have a database, how can you:
     fry.friends.add(leela)
     leela.friends.add(fry)
     ```
-
+###shut up and show me the code 
 
 
 
