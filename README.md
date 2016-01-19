@@ -87,6 +87,7 @@ Query involves three basic parts. When you have a database, how can you:
     You must save an object before it can be assigned to a foreign key relationship. Let's say that an employee and a company is ManyToOne relationship(a company could have lots of employees, but a employee should work for only one company). In this case:
 
     ***acompany = Company(name="PlanetExpress", description="deliver things")***
+    
     ***fry = Employee(name="Fry", age=35, company=acompany)***
 
     Above will raise a error when assign acompany to fry's company, you have to save acompany first before use it.
