@@ -77,6 +77,35 @@ Query involves three basic parts. When you have a database, how can you:
 
     ***express = Company.objects.get(pk=1); express.individual_set.all()*** will output all individual objects whose company is express. 
 
+    ####More about all/get/filter/exclude
+
+        1. All. I think all is the leatest useful one among the four methods. It simply retrive all objects of a table. No other use. Althoug QuerySet supports chaining, but something like below is really unnecessary.
+
+            ***Individual.objects.all().filter(friends__name__exact="Fry")***
+
+        You should just omit all(), changing it to:
+
+            ***Individula.objects.filter(friends__name__exact="Fry")***
+
+        2. Get. Remember that get directly return a single object according to your query. If your query gets more than one objects satifying it, get will raise a ***MultipleObjectsReturned***exception. So use it when you're sure that only one object will meet your query condition. Like below, we know that this will return the only one objects due to ***unique=True*** is used when defining the ***Individual***'s name field.
+
+            ***Individula.objects.get(name__exact="Fry")***
+
+        3. Filter. Filter will always return a QuerySet, even if only a single object matches the query, it will be a QuerySet containing a single element. Each time you refine a QuerySet, you get a brand-new Query that is in no way bound to the previous QuerySet. Each refinement creates a separate and distinct QuerySet that can be stored, used and reused.
+
+            ***q1 = Individual.objects.filter(species="human")***
+
+            Above will return a QuerySet containing Individuals' with species equal to "human", q1 is reuseable, let's reuse it to find out whose name is "Fry" under species equal to "human"
+
+            ***q1.get(name="Fry")***
+
+            Above will return a single object who is fry.
+
+        4. Exclude. Exclude is the oppsite of filter. It will return a QuerySet which doesn't match the query condition.
+
+
+
+
 ###create objects
 
 1. ordinary objects with no relation field is easily created. Just like ordinary creatation of python objects.

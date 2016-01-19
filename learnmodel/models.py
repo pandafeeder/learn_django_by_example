@@ -21,7 +21,7 @@ class Individual(TimeStampModel):
 		('M', 'male'),
 		('F', 'female'),
 	)
-	name    = models.CharField(max_length=50)
+	name    = models.CharField(max_length=50, unique=True)
 	age     = models.PositiveSmallIntegerField()
 	species = models.ForeignKey('Species', on_delete=models.CASCADE)
 	gender  = models.CharField(max_length=1, choices=GENDER)
