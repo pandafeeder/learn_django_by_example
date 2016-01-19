@@ -79,12 +79,37 @@ Query involves three basic parts. When you have a database, how can you:
 
 ###create objects
 
-1.ordinary objects with no relation file is easily created. Just like ordinary creatation of python objects.
+1. ordinary objects with no relation field is easily created. Just like ordinary creatation of python objects.
     instance = Class(args=xxxx)
 
-2.ForeignField
+2. ForeignField
 
-3.ManyToManyField
+    You must save an object before it can be assigned to a foreign key relationship. Let's say that an employee and a company is ManyToOne relationship(a company could have lots of employees, but a employee should work for only one company). In this case:
+
+    ***acompany = Company(name="PlanetExpress", description="deliver things")***
+    ***fry = Employee(name="Fry", age=35, company=acompany)***
+
+    Above will raise a error when assign acompany to fry's company, you have to save acompany first before use it.
+
+3. ManyToManyField
+    
+    You have to save an objects before associating it with manytomany relationship. Let's say that fry and leela are friends,
+
+    ```python
+    class Individual(modles.Model): 
+        ...
+        name = models.CharField(max_length=50)
+        friends = models.ManyToManyField('self')
+        ...
+
+    fry = Individual(name="Fry")
+    leela = Individual(name="Leela")
+    #you have to save it first
+    fry.save()
+    leela.save()
+    fry.friends.add(leela)
+    leela.friends.add(fry)
+    ```
 
 
 
