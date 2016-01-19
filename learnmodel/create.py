@@ -2,7 +2,6 @@ from models import Individual, Company, Species
 
 #modify companey
 planetExpress = Company(name="PlanetExpress", description="deliver company")
-planetExpress.save()
 
 #modify species
 human = Species(name="Human", characteristic="a human")
@@ -23,10 +22,14 @@ hermes = Individual(name="Hermes", age=54, species=human, gender='M', company=pl
 def create():
     """create calls save on the objects to save them to database
     for ForeignKey and ManyToManyField field, their saving must antecede using"""
+
+    planetExpress.save()
+
     for i in [human, mutant, robot, reptile, crab]:
 	i.save()
     for i in [fry, leela, bender, zoidberg, amy, hubert, hermes]:
 	i.save()
+
     fry.friends.add(leela, bender, amy, hermes)
     leela.friends.add(fry, bender, amy, hermes)
     #oh, poor Zoidberg
