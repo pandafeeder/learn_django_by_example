@@ -4,35 +4,24 @@
 import os
 
 from django.conf import settings
-from django.conf.urls import url
 
 
 BASE_DIR = os.path.dirname(__file__)
 
 settings.configure(
 	DEBUG = True,
-	ROOT_URLCONF = __file__,
+	ROOT_URLCONF = 'urls_conf',
 	INSTALLED_APPS = (
-		'learnmodel',
+		'learnmodel.apps.LearnmodelConfig',
 		#'learnview',
 		#'learnform',
 	),
 	DATABASES = {
 		'default': {
-            		'ENGINE': 'django.db.backends.sqlite3',
-            		'NAME': 'learnmodel.db',
-            		'USER': '',
-            		'PASSWORD': '',
-            		'HOST': '',
-            		'PORT': '',
-		},
+        		'ENGINE': 'django.db.backends.sqlite3',
+        		'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    		}
 	},
-)
-
-urlpatterns = (
-	#url(r'^learnmodel/', include('learnmodel.urls', namespace='learnmodel')),
-	#url(r'^learnview/',  include('learnview.urls',  namespace='learnview')),
-	#url(r'^learnform',   include('learnform.urls',  namespace='learnform')),
 )
 
 
