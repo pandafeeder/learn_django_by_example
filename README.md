@@ -160,7 +160,17 @@ Query involves three basic parts. When you have a database, how can you:
 |4    |Reptile       |they are reptile live in the swamp                               |
 |5    |Crab          |crab, this is for Zoidberg                                       |
 
+   ***Individual TABLE***
 
+|id   | name                |  age | species | gender |  company      | friends                    |
+|-----|---------------------|------|---------|--------|---------------|----------------------------|
+|1    |Fry                  | 35   | Human   | MALE   |PlanetExpress  | leela, bender, amy, hermes |
+|2    |Leela                | 35   | Mutant  | FAMALE |PlanetExpress  | fry, bender, amy, hermes   |
+|3    |Bender               | 17   | Robot   | MALE   |PlanetExpress  | fry, leela                 |
+|4    |Zoidberg             | 86   | Crab    | MALE   |PlanetExpress  | NULL                       |
+|5    |Amy Wong             | 37   | Human   | FAMALE |PlanetExpress  | leela                      |
+|6    |Hubert J. Farnsworth | 210  | Human   | MALE   |PlanetExpress  | hermes                     |
+|7    |Hermes               | 54   | Human   | MALE   |PlanetExpress  | hubert                     |
 
 
 
