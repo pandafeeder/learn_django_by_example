@@ -144,8 +144,11 @@ Query involves three basic parts. When you have a database, how can you:
 
 ###shut up and show me the code 
 
+###Company TABLE
 
-
+| name         |  description  |
+|--------------|---------------|
+|PlanetExpress |deliver company|
 
 
 
