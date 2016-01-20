@@ -144,13 +144,21 @@ Query involves three basic parts. When you have a database, how can you:
 
 ###shut up and show me the code 
 
-   ####Company TABLE
+   ***Company TABLE***
 
-| name         |  description  |
-|--------------|---------------|
-|PlanetExpress |deliver company|
+|id   | name         |  description  |
+|-----|--------------|---------------|
+|1    |PlanetExpress |deliver company|
 
+   ***Species TABLE***
 
+|id   | name         |  characteristic                                                 |
+|-----|--------------|-----------------------------------------------------------------|
+|1    |Human         |a human                                                          |
+|2    |Mutant        |they live in the sewage                                          |
+|3    |Robot         |there are many different kinds of robots with different function |
+|4    |Reptile       |they are reptile live in the swamp                               |
+|5    |Crab          |crab, this is for Zoidberg                                       |
 
 
 
