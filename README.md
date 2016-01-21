@@ -142,7 +142,29 @@ Query involves three basic parts. When you have a database, how can you:
     ```
 
 
-###shut up and show me the code 
+###shut up and show me the example
+1. migrate
+
+   From command line, use the following command to migrate:
+
+   ***python learndjango.py makemigrations learnmodel***
+   ***python learndjango.py migrate***
+
+   This will generate the db.sqlite3 database file.
+
+2. create TABLES
+
+   Form command line, input:
+   
+   ***python learndjango.py shell***
+
+   in the python prompt, enter:
+
+   **>>from learnmodel import create**
+
+   **>>create.create()**
+
+   This will save INDEXs into the TABLEs like following:
 
    ***Company TABLE***
 
