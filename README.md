@@ -148,6 +148,7 @@ Query involves three basic parts. When you have a database, how can you:
    From command line, use the following command to migrate:
 
    ***python learndjango.py makemigrations learnmodel***
+
    ***python learndjango.py migrate***
 
    This will generate the db.sqlite3 database file.
@@ -164,7 +165,7 @@ Query involves three basic parts. When you have a database, how can you:
 
    **>>create.create()**
 
-   This will save INDEXs into the TABLEs like following:
+   This will save INDEXs into the TABLEs. And we got the following recoreds: 
 
    ***Company TABLE***
 
