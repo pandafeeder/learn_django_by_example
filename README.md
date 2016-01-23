@@ -165,7 +165,7 @@ Query involves three basic parts. When you have a database, how can you:
 
    **>>create.create()**
 
-   This will save INDEXs into the TABLEs. And we got the following recoreds: 
+   This will save INSERTs into the TABLEs. And we got the following recoreds: 
 
    ***Company TABLE***
 
