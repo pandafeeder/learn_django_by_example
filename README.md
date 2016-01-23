@@ -195,6 +195,7 @@ Query involves three basic parts. When you have a database, how can you:
 |6    |Hubert J. Farnsworth | 210  | Human   | MALE   |PlanetExpress  | hermes                     |
 |7    |Hermes               | 54   | Human   | MALE   |PlanetExpress  | hubert                     |
 
+
     Now From command line, input:
 
    ***python learndjango.py shell***
