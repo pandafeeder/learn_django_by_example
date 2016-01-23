@@ -155,7 +155,7 @@ Query involves three basic parts. When you have a database, how can you:
 
 2. create TABLES
 
-   Form command line, input:
+   From command line, input:
    
    ***python learndjango.py shell***
 
@@ -194,6 +194,18 @@ Query involves three basic parts. When you have a database, how can you:
 |5    |Amy Wong             | 37   | Human   | FAMALE |PlanetExpress  | leela                      |
 |6    |Hubert J. Farnsworth | 210  | Human   | MALE   |PlanetExpress  | hermes                     |
 |7    |Hermes               | 54   | Human   | MALE   |PlanetExpress  | hubert                     |
+
+    Now From command line, input:
+
+   ***python learndjango.py shell***
+
+   in the python prompt, enter:
+
+   **>>from learnmodel import query**
+
+   **>>query.test()**
+
+   This will print some query answer on the screen, input the your anwser to it. Answers are contained in the query.py file
 
 
 
