@@ -205,7 +205,7 @@ Query involves three basic parts. When you have a database, how can you:
 
    **>>query.test()**
 
-   This will print some query answer on the screen, input the your anwser to it. Answers are contained in the query.py file
+   This will print some query quiz on the screen, input your anwser then hit Enter to make a check. Answers are contained in the [query.py][queryfile] file
 
 
 
@@ -225,3 +225,4 @@ Query involves three basic parts. When you have a database, how can you:
 [2]:https://docs.djangoproject.com/en/1.9/topics/db/queries/#saving-changes-to-objects
 [3]:https://docs.djangoproject.com/en/1.9/topics/db/queries/#retrieving-objects
 [queryset]:https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.query.QuerySet
+[queryfile]:https://github.com/pandafeeder/learn_django_by_example/blob/master/learnmodel/query.py
