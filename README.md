@@ -3,7 +3,7 @@
 Django has three fundamental parts plus one usefull util Form, Form is kinda familar to Model, but worth being taken as the fourth fundamental part, so:
 
 1. Model Layer(django.db)
-2. View Layer(django.views)
+2. View Layer(django.views class based view or view function)
 3. Template Layer(django.template)
 4. Form(django.form)
 
