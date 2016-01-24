@@ -210,6 +210,11 @@ Query involves three basic parts. When you have a database, how can you:
 
 
 
+###Uncovered topics
+
+   Django.db also has lots of other features, like F, Q objects, raw SQL excutions. Keep in mind that [offical document always has the treature][officalDOM]
+
+
 
 
 [field]:https://docs.djangoproject.com/en/1.9/ref/models/fields/#model-field-types
@@ -227,3 +232,4 @@ Query involves three basic parts. When you have a database, how can you:
 [3]:https://docs.djangoproject.com/en/1.9/topics/db/queries/#retrieving-objects
 [queryset]:https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.query.QuerySet
 [queryfile]:https://github.com/pandafeeder/learn_django_by_example/blob/master/learnmodel/query.py
+[officalDOM]https://docs.djangoproject.com/en/1.9/topics/db/queries/
