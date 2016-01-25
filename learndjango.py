@@ -13,7 +13,7 @@ settings.configure(
 	ROOT_URLCONF = 'urls_conf',
 	INSTALLED_APPS = (
 		'learnmodel.apps.LearnmodelConfig',
-		#'learnview',
+		'learnview.apps.LearnviewConfig',
 		#'learnform',
 	),
 	DATABASES = {
