@@ -1,5 +1,5 @@
-from django.conf.urls import url
+from django.conf.urls import include, url
 
 urlpatterns = [
-    url(r'placeholder', 'placeholder')
+    url(r'^learnview/', include('learnview.urls'))
 ]
