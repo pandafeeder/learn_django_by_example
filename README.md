@@ -264,9 +264,9 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^slug1(\w+)', views.slug1view.as_view(), name='slug1'), #use class based view
-    url(r'^slug2(?P<slug2_parameter>\d+)', views.slug2view, name='slug2'), #use function based view
-    url(r'^slug3', view.slug3view, {extra_parameter: value}, name='slug3'), #pass extra parameter using python dict
+    url(r'^slug1/(\w+)$', views.slug1view.as_view(), name='slug1'), #use class based view
+    url(r'^slug2/(?P<slug2_parameter>\d+)$', views.slug2view, name='slug2'), #use function based view
+    url(r'^slug3$', view.slug3view, {'extra_parameter': value}, name='slug3'), #pass extra parameter using python dict
 ]
 
 ```
