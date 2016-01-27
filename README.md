@@ -233,3 +233,40 @@ Query involves three basic parts. When you have a database, how can you:
 [queryset]:https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.query.QuerySet
 [queryfile]:https://github.com/pandafeeder/learn_django_by_example/blob/master/learnmodel/query.py
 [officalDOM]:https://docs.djangoproject.com/en/1.9/topics/db/queries/
+
+
+
+## View Layer(class based views in django.views and function based views)
+
+### URL dispatcher
+
+When a request coming from client, how does django decide which view is used to generate response? Of course this is based on the comming url,
+but to know about how does django do the mapping bewteen url and view, we have to understand django's url dispatcher mechanism.
+
+#### basic use sample:
+
+**ROOT_URLCONF file**
+
+```python
+from django.conf.urls import url, include
+
+urlpatterns = [
+    url(r'^myapp1/', include('myapp1.urls', namespace='myapp1')),
+    url(r'^myapp2/', include('myapp2.urls', namespace='myapp2')),
+]
+```
+
+
+**urls.py file under myapp1**
+
+```python
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r'^slug1(\w+)', views.slug1view.as_view(), name='slug1'), #use class based view
+    url(r'^slug2(?P<slug2_parameter>\d+)', views.slug2view, name='slug2'), #use function based view
+    url(r'^slug3', view.slug3view, {extra_parameter: value}, name='slug3'), #pass extra parameter using python dict
+]
+
+```
