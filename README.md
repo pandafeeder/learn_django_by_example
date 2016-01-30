@@ -97,7 +97,10 @@ Query involves three basic parts. When you have a database, how can you:
 
         ***q1 = Individual.objects.filter(species=human)***
 
+
+
         Above will return a QuerySet containing Individuals' with species equal to "human", q1 is reuseable, let's reuse it to find out whose name is "Fry" under species equal to human
+
 
         ***q1.get(name="Fry")***
 
