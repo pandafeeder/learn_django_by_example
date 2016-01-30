@@ -256,7 +256,7 @@ urlpatterns = [
 ```
 
 
-**urls.py file under myapp1**
+**urls.py file under learnview**
 
 ```python
 from django.conf.urls import url
