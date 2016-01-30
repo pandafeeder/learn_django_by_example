@@ -10,6 +10,18 @@ class TimeStampModel(models.Model):
 	created  = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 
+	def as_dict(self):
+
+	    dict = {}
+	    field_names = [field.name for field in self._meta.get_fields()]
+	    for name in field_names:
+		field_instance = getattr(self, name)
+		if field_instance.__class__.__name__ == 'ManyRelatedManager':
+		    dict[name] = field_instance.all()
+		    continue
+		dict[name] = field_instance
+	    return dict
+
 	class Meta:
 		abstract = True 
 
