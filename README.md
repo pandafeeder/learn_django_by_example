@@ -248,11 +248,10 @@ but to know about how does django do the mapping bewteen url and view, we have t
 **ROOT_URLCONF file**
 
 ```python
-from django.conf.urls import url, include
+from django.conf.urls import include, url
 
 urlpatterns = [
-    url(r'^myapp1/', include('myapp1.urls', namespace='myapp1')),
-    url(r'^myapp2/', include('myapp2.urls', namespace='myapp2')),
+    url(r'^learnview/', include('learnview.urls', namespace="learnview"),)
 ]
 ```
 
@@ -263,10 +262,10 @@ urlpatterns = [
 from django.conf.urls import url
 from . import views
 
+app_name = "learnview"
 urlpatterns = [
-    url(r'^slug1/(\w+)$', views.slug1view.as_view(), name='slug1'), #use class based view
-    url(r'^slug2/(?P<slug2_parameter>\d+)$', views.slug2view, name='slug2'), #use function based view
-    url(r'^slug3$', view.slug3view, {'extra_parameter': value}, name='slug3'), #pass extra parameter using python dict
+    url(r'^$', views.index, name="index"),
+    url(r'^all/$', views.allrecord, name="allrecord"),
+    url(r'individual/(?P<pk>\d+)$', views.individual, name="individual"),
 ]
-
 ```
