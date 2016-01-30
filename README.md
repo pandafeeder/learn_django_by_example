@@ -94,6 +94,7 @@ Query involves three basic parts. When you have a database, how can you:
     3. Filter. Filter will always return a QuerySet, even if only a single object matches the query, it will be a QuerySet containing a single element. Each time you refine a QuerySet, you get a brand-new Query that is in no way bound to the previous QuerySet. Each refinement creates a separate and distinct QuerySet that can be stored, used and reused.
 
 	***human = Species.objects.get(name='human')***
+
         ***q1 = Individual.objects.filter(species=human)***
 
         Above will return a QuerySet containing Individuals' with species equal to "human", q1 is reuseable, let's reuse it to find out whose name is "Fry" under species equal to human
