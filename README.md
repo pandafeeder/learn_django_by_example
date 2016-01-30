@@ -95,9 +95,9 @@ Query involves three basic parts. When you have a database, how can you:
 
         ***human = Species.objects.get(name='human')***
 
-        Above will return a QuerySet containing Individuals' with species equal to "human", q1 is reuseable, let's reuse it to find out whose name is "Fry" under species equal to human
-
         ***q1 = Individual.objects.filter(species=human)***
+
+        Above will return a QuerySet containing Individuals' with species equal to "human", q1 is reuseable, let's reuse it to find out whose name is "Fry" under species equal to human
 
         ***q1.get(name="Fry")***
 
@@ -240,6 +240,12 @@ Query involves three basic parts. When you have a database, how can you:
 
 ## View Layer(class based views in django.views and function based views)
 
+From offical document:
+
+When a page is requested, Django creates an **HttpRequest** object that contains metadata about the request. Then Django loads the appropriate view, passing the **HttpRequest** as the first argument to the view function. Each view is responsible for returning an **HttpResponse** object. 
+
+This is offical document descripting [how Django process a request][hdpr]
+
 ### URL dispatcher
 
 When a request coming from client, how does django decide which view is used to generate response? Of course this is based on the comming url,
@@ -271,3 +277,16 @@ urlpatterns = [
     url(r'individual/(?P<pk>\d+)$', views.individual, name="individual"),
 ]
 ```
+
+#### the way it worked out
+
+Django will look for the file you defined as ROOT_URLCONF in django.conf.settings.configer() method, then make it the entry file for identifying urls. It uses regular expression to match url string. Named captured patten as keyword argument to view function, if named group is not used, captured pattern will be used as positional argument to view function. ***namespace:name*** could be used as tag for a url stratege. This is very usefull when reverse url. You can also pass extra argument to view function using a {foo: bar} as a parameter to url. Well I think this is pretty much for url now.
+
+### function based view
+
+A function based view is responsible for returning a HttpResponse object contained in django.http. 
+
+
+
+
+[hdpr]:https://docs.djangoproject.com/en/1.9/topics/http/urls/#how-django-processes-a-request
