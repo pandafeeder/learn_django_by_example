@@ -15,6 +15,8 @@ settings.configure(
 		'learnmodel.apps.LearnmodelConfig',
 		'learnview.apps.LearnviewConfig',
 		#'learnform',
+		'django.contrib.contenttypes',
+		'django.contrib.auth',
 	),
 	DATABASES = {
 		'default': {
