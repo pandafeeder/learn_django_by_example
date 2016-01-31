@@ -47,22 +47,21 @@ def individual(request, pk):
 	response.write('<p>'+k+': '+str(v)+'</p>')
     return response
 
+#followings are class based views
 
 class temp_view(TemplateView):
     "demonstrate use of TemplateView"
     template_name = "learnview/learnview_index.html"
 
 
-class detail_view(DetailView):
-    "demonstrate use of DetailView"
-    pass
-
-
 class list_view(ListView):
     "demonstrate use of ListView"
+    template_name = "learnview/list_view.html"
 
     #use get_queryset decide which TABLE to be listed, 
     #this will overide the assingment to model attribut of this class
+    #queryset attribut is another alternative
+    #specifying model = MODELNAME is just short for queryset = MODELNAME.objects.all()
     def get_queryset(self):
 	if self.kwargs['cate'] == 'individual':
 	    self.kwargs['model_name'] = 'Individual'
@@ -84,4 +83,7 @@ class list_view(ListView):
 	context['model_name'] = self.kwargs['model_name']
 	return context
 
-    template_name = "learnview/list_view.html"
+class detail_view(DetailView):
+    "demonstrate use of DetailView"
+    template_name = "learnview/detail_view.html"
+    model = Individual
