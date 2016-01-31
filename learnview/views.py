@@ -1,8 +1,9 @@
-from django.http import  HttpResponse
+from django.http import  HttpResponse, HttpResponseNotFound, Http404
 from learnmodel.models import Individual, Company, Species
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.core.urlresolvers import reverse
 from itertools import izip
+from django.views.generic import TemplateView, DetailView, ListView
 
 def index(request):
     "view function is responsible for returning a HttpResponse object"
@@ -45,3 +46,42 @@ def individual(request, pk):
 	    continue
 	response.write('<p>'+k+': '+str(v)+'</p>')
     return response
+
+
+class temp_view(TemplateView):
+    "demonstrate use of TemplateView"
+    template_name = "learnview/learnview_index.html"
+
+
+class detail_view(DetailView):
+    "demonstrate use of DetailView"
+    pass
+
+
+class list_view(ListView):
+    "demonstrate use of ListView"
+
+    #use get_queryset decide which TABLE to be listed, 
+    #this will overide the assingment to model attribut of this class
+    def get_queryset(self):
+	if self.kwargs['cate'] == 'individual':
+	    self.kwargs['model_name'] = 'Individual'
+	    return Individual.objects.all()
+	elif self.kwargs['cate'] == 'company':
+	    self.kwargs['model_name'] = 'Company'
+	    return Company.objects.all()
+	elif self.kwargs['cate'] == 'species':
+	    self.kwargs['model_name'] = 'Species'
+	    return Species.objects.all()
+	else:
+	    #raise a Http404 excepton at any point will make django repsone a 404 response,
+	    #this is really handy
+	    raise Http404("Page not found")
+	    
+    #overide get_context_data to pass some extra content to context
+    def get_context_data(self, **kwargs):
+	context = super(list_view, self).get_context_data(**kwargs)
+	context['model_name'] = self.kwargs['model_name']
+	return context
+
+    template_name = "learnview/list_view.html"
