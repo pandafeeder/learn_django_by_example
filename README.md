@@ -284,9 +284,25 @@ Django will look for the file you defined as ROOT_URLCONF in django.conf.setting
 
 ### function based view
 
-A function based view is responsible for returning a HttpResponse object contained in django.http. 
+A function based view is responsible for returning a HttpResponse object contained in django.http. Besides that, you can do any thing you want in a view function, but you'd better not define some time consuming operations, no body wants to keep waiting for a response long time. You can use [Redis Queue][rq]/[Celery][celery]/[django-background-task][dbt] or other task queue library to put time consuming part input asynchronous task queues.
+
+In the [example code][ec], I defined three function view to deal with three url strategy.
+
+index deal with url /learnview/, the simplest way to response, just pass string to HttpResponse then return it.
+
+```python
+def index(request):
+    "view function is responsible for returning a HttpResponse object"
+    return HttpResponse("welcome to learn Django by example's learnview page")
+```
+
+
 
 
 
 
 [hdpr]:https://docs.djangoproject.com/en/1.9/topics/http/urls/#how-django-processes-a-request
+[rq]:http://python-rq.org/
+[celery]:http://celeryproject.org/
+[dbt]:https://pypi.python.org/pypi/django-background-tasks
+[ec]:https://github.com/pandafeeder/learn_django_by_example/blob/master/learnview/views.py
