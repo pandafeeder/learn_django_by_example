@@ -321,6 +321,8 @@ def individual(request, pk):
 ```
 
 
+### class based view
+
 
 [hdpr]:https://docs.djangoproject.com/en/1.9/topics/http/urls/#how-django-processes-a-request
 [rq]:http://python-rq.org/
