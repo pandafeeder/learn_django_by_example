@@ -296,8 +296,29 @@ def index(request):
     return HttpResponse("welcome to learn Django by example's learnview page")
 ```
 
+individual function take keyword argument ***pk*** from named group caputred from url, then use shortcuts get_object_or_404 to retrive instance with that pk from Individual TABLE, and use as_dict() defined in the parent model class method to convert a model instance to a dict, then incrementaly write key:value pair to response, finally return response.
+
+```python
+url(r'individual/(?P<pk>\d+)$', views.individual, name="individual")
+```
 
 
+```python
+def individual(request, pk):
+    "demonstrate use of shortcut get_object_or_404"
+    indi = get_object_or_404(Individual, pk=pk)
+    dict = indi.as_dict()
+    response = HttpResponse()
+    for k,v in dict.iteritems():
+	if v.__class__.__name__ == 'QuerySet':
+	    vlist =[]
+	    for i in v:
+		vlist.append(str(i))
+	    response.write('<p>'+k+': '+', '.join(vlist)+'</p>')
+	    continue
+	response.write('<p>'+k+': '+str(v)+'</p>')
+    return response
+```
 
 
 
