@@ -1,5 +1,7 @@
+{% block content %}
 <h1>{{ object.name }}</h1>
-<p>age: {{ object.age }}</p>
-<p>species: {{ object.species }}</p>
-<p>company: {{ object.company }}</p>
-<p>created: {{ object.created }}</p>
+{% for k,v in object_dict.items %}
+    <p>{{ k }}: {{ v }}</p>
+{% endfor %}
+<p>{{ object.age }}</p>
+{% endblock %}
