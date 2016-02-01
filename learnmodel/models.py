@@ -13,7 +13,8 @@ class TimeStampModel(models.Model):
 	def as_dict(self):
 
 	    dict = {}
-	    field_names = [field.name for field in self._meta.get_fields()]
+	    #exclude ManyToOneRel, which backwards to ForeignKey
+	    field_names = [field.name for field in self._meta.get_fields() if 'ManyToOneRel' not in str(field)]
 	    for name in field_names:
 		field_instance = getattr(self, name)
 		if field_instance.__class__.__name__ == 'ManyRelatedManager':
