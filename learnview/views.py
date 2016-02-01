@@ -86,4 +86,20 @@ class list_view(ListView):
 class detail_view(DetailView):
     "demonstrate use of DetailView"
     template_name = "learnview/detail_view.html"
-    model = Individual
+
+    def get_queryset(self):
+	if self.kwargs['modeltocheck'] == 'individual':
+	    return Individual.objects.all()
+	if self.kwargs['modeltocheck'] == 'company':
+	    return Company.objects.all()
+	if self.kwargs['modeltocheck'] == 'species':
+	    return Species.objects.all()
+	else:
+	    raise Http404("Page not found")
+
+    def get_context_data(self, **kwargs):
+	context = super(detail_view, self).get_context_data(**kwargs)
+	fieldnames = [i.name for i in self.object._meta.get_fields()]
+	print fieldnames
+	context['object_dict'] = self.object.as_dict()
+	return context
