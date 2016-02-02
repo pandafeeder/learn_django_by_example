@@ -323,9 +323,47 @@ def individual(request, pk):
 
 ### class based view
 
+First glancing at class based view feels like magic. The simplest generic class based view look like this:
+
+view.py file:
+
+```python
+from django.views.generic import ListView
+from MymodelsModule import Mymodel
+
+class MymodelList(ListView):
+    model = Mymodel
+```
+urls.py file:
+
+```python
+from django.conf.urls import url
+from myApp.view import MymodelList
+
+urlpatterns = [
+    url(r'^mymodellist/$', MymodelList.as_view())
+]
+```
+
+myApp/mymodel_list.html file
+
+```html
+{% block content %}
+    <h2>Mymodel</h2>
+    <ul>
+        {% for model in object_list %}
+            <li>{{ model.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+```
+
+That's all you need. Django will do the magic behind. Now let's reveal the mystery by this chuck of [Django offical document][cbv_mys].
+
 
 [hdpr]:https://docs.djangoproject.com/en/1.9/topics/http/urls/#how-django-processes-a-request
 [rq]:http://python-rq.org/
 [celery]:http://celeryproject.org/
 [dbt]:https://pypi.python.org/pypi/django-background-tasks
 [ec]:https://github.com/pandafeeder/learn_django_by_example/blob/master/learnview/views.py
+[cbv_mys]:https://docs.djangoproject.com/en/1.9/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object
