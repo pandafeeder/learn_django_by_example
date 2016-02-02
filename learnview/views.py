@@ -54,10 +54,7 @@ class temp_view(TemplateView):
     template_name = "learnview/learnview_index.html"
 
 
-class list_view(ListView):
-    "demonstrate use of ListView"
-    template_name = "learnview/list_view.html"
-
+class myGetQuerySetMixin(object):
     #use get_queryset decide which TABLE to be listed, 
     #this will overide the assingment to model attribut of this class
     #queryset attribut is another alternative
@@ -76,6 +73,11 @@ class list_view(ListView):
 	    #raise a Http404 excepton at any point will make django repsone a 404 response,
 	    #this is really handy
 	    raise Http404("Page not found")
+
+
+class list_view(myGetQuerySetMixin, ListView):
+    "demonstrate use of ListView"
+    template_name = "learnview/list_view.html"
 	    
     #overide get_context_data to pass some extra content to context
     def get_context_data(self, **kwargs):
@@ -83,19 +85,9 @@ class list_view(ListView):
 	context['model_name'] = self.kwargs['model_name']
 	return context
 
-class detail_view(DetailView):
+class detail_view(myGetQuerySetMixin, DetailView):
     "demonstrate use of DetailView"
     template_name = "learnview/detail_view.html"
-
-    def get_queryset(self):
-	if self.kwargs['modeltocheck'] == 'individual':
-	    return Individual.objects.all()
-	if self.kwargs['modeltocheck'] == 'company':
-	    return Company.objects.all()
-	if self.kwargs['modeltocheck'] == 'species':
-	    return Species.objects.all()
-	else:
-	    raise Http404("Page not found")
 
     def get_context_data(self, **kwargs):
 	context = super(detail_view, self).get_context_data(**kwargs)
