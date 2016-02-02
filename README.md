@@ -399,7 +399,9 @@ There's a third-party library called django-brace supplies lots of useful Mixins
 
 Tom Christie is not satified with Django's complex inheriting ralations of class based view. So he made his own simple class-bases views in [django-vanilla-views][vanilla]
 
+### Uncoverd topices
 
+FormView, CreateView, UpdateView, DeleteView, Generic date views.
 
 [hdpr]:https://docs.djangoproject.com/en/1.9/topics/http/urls/#how-django-processes-a-request
 [rq]:http://python-rq.org/
