@@ -360,6 +360,46 @@ myApp/mymodel_list.html file
 
 That's all you need. Django will do the magic behind. Now let's reveal the mystery by this chuck of [Django offical document][cbv_mys].
 
+Keep in mind the following:
+
+1. self.args and self.kwargs:
+
+    self.args contains the positional arguments captured in url, self.kwargs contains key word arguments caputre by url named group
+
+2. queryset
+
+    queryset attribut is a QuerySet object in Django, this defines the QuerySet the view will use for retrive object from database. **model=ModelName** is equal to **queryset = ModelName.objects.all()**, it's just a shortcut.
+
+3. get_queryset()
+
+    returns the queryset above.
+
+4. get_context_data()
+
+    get data from the objects retrived by queryset to context.
+
+5. self.object and get_object()
+
+    self.object is the object retrived by queryset, get_object() defines the detail of retriving a object from database.
+
+Most time, we will used the above five attributs or method to custom our own class based view.
+
+#### Mixin and advantage of class based views
+
+There is debates on function based views and class based views. function based is easy to understand, but some kinda lack of ability to reues. While we can use class based views like most object-oriented language, we can use Mixin, Mixin is a class which supply some method, but doesn't mean to substansiate itself. We can just let our view inherit the Mixin and a view class.Pay attension to MRO, typically the following way:
+
+the base view classes provided by Django go to the right.
+
+Mixins go to the left of the base view.
+
+Mixins should inherit frmo Python's built-in object type.
+
+
+There's a third-party library called django-brace supplies lots of useful Mixins.
+
+Tom Christie is not satified with Django's complex inheriting ralations of class based view. So he made his own simple class-bases views in [django-vanilla-views][vanilla]
+
+
 
 [hdpr]:https://docs.djangoproject.com/en/1.9/topics/http/urls/#how-django-processes-a-request
 [rq]:http://python-rq.org/
@@ -367,3 +407,4 @@ That's all you need. Django will do the magic behind. Now let's reveal the myste
 [dbt]:https://pypi.python.org/pypi/django-background-tasks
 [ec]:https://github.com/pandafeeder/learn_django_by_example/blob/master/learnview/views.py
 [cbv_mys]:https://docs.djangoproject.com/en/1.9/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object
+[vanilla]:http://django-vanilla-views.org/
