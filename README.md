@@ -388,11 +388,11 @@ Most time, we will used the above five attributs or method to custom our own cla
 
 There is debates on function based views and class based views. function based is easy to understand, but some kinda lack of ability to reues. While we can use class based views like most object-oriented language, we can use Mixin, Mixin is a class which supply some method, but doesn't mean to substansiate itself. We can just let our view inherit the Mixin and a view class.Pay attension to MRO, typically the following way:
 
-the base view classes provided by Django go to the right.
+1. the base view classes provided by Django go to the right.
 
-Mixins go to the left of the base view.
+2. Mixins go to the left of the base view.
 
-Mixins should inherit frmo Python's built-in object type.
+3. Mixins should inherit frmo Python's built-in object type.
 
 
 There's a third-party library called django-brace supplies lots of useful Mixins.
@@ -410,3 +410,8 @@ FormView, CreateView, UpdateView, DeleteView, Generic date views.
 [ec]:https://github.com/pandafeeder/learn_django_by_example/blob/master/learnview/views.py
 [cbv_mys]:https://docs.djangoproject.com/en/1.9/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object
 [vanilla]:http://django-vanilla-views.org/
+
+
+
+## Form
+
