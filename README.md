@@ -433,4 +433,4 @@ There are three aspects when dealing with form in Django.
 
 3. receiving and processing submitted forms and data from clients
 
-	Data sent from client is contained in request.POST if your form method is POST, then use ***myform = MyFormClass(request.POST)*** to make a form instance, use myform.is_valid() to check its validation, retrive data using form.cleaned_data dict. Field name is its key name.
+	Data sent from client is contained in request.POST if your form method is POST, then use ***myform = MyFormClass(request.POST)*** to make a form instance, use **myform.is_valid()** to check its validation, retrive data using **form.cleaned_data** dict. Field name is its key name.
