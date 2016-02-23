@@ -7,6 +7,10 @@ Django has three fundamental parts plus one usefull util Form, Form is kinda fam
 3. Template Layer(django.template)
 4. Form(django.form)
 
+Added topic:
+
+1. Authentication
+
 ## Model Layer(django.db)
 
 ### basic use sample:
@@ -415,3 +419,18 @@ FormView, CreateView, UpdateView, DeleteView, Generic date views.
 
 ## Form
 
+Django form is very intuitive. Every field corespondes to a <input> in html with a default widget which you can assign manully. Surly there are some keyword arguments for customing field in form.
+
+There are three aspects when dealing with form in Django.
+
+1. prepare and constructing data for rendering in html
+
+	This is done by define your Form class, and initialize a form object with no arguments or some initial data
+
+2. form presentation in html AKA. Django template language for presenting form
+
+	there are some useful template tag for presenting form in template.  {{ form.as_table }}  {{ form.as_p }} {{ form.as_ul }} and others. Remeber that form is iterable, so you can use {% for field in form %} to loop through a form
+
+3. receiving and processing submitted forms and data from clients
+
+	Data sent from client is contained in request.POST if your form method is POST, then use ***myform = MyFormClass(request.POST)*** to make a form instance, use myform.is_valid() to check its validation, retrive data using form.cleaned_data dict. Field name is its key name.
