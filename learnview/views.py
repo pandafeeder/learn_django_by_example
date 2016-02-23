@@ -92,6 +92,6 @@ class detail_view(myGetQuerySetMixin, DetailView):
     def get_context_data(self, **kwargs):
 	context = super(detail_view, self).get_context_data(**kwargs)
 	fieldnames = [i.name for i in self.object._meta.get_fields()]
-	print fieldnames
+	#print fieldnames
 	context['object_dict'] = self.object.as_dict()
 	return context
