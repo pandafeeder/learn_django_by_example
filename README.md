@@ -419,7 +419,7 @@ FormView, CreateView, UpdateView, DeleteView, Generic date views.
 
 ## Form
 
-Django form is very intuitive. Every field corespondes to a <input> in html with a default widget which you can assign manully. Surly there are some keyword arguments for customing field in form.
+Django form is very intuitive. Every field corespondes to a input tag in html with a default widget which you can assign manully. Surly there are some keyword arguments for customing field in form.
 
 There are three aspects when dealing with form in Django.
 
