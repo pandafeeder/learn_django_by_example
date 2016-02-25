@@ -10,6 +10,11 @@ Django has three fundamental parts plus one usefull util Form, Form is kinda fam
 Added topic:
 
 1. Authentication
+2. Session
+3. REST API
+4. Coping with Tornado
+5. Nginx as reverse proxy
+
 
 ## Model Layer(django.db)
 
